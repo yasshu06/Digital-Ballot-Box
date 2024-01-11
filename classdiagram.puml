@@ -1,0 +1,108 @@
+@startuml
+annotation java.lang.Override
+annotation java.lang.SuppressWarnings
+class DigitalBallotBox.AdminDashboard
+class DigitalBallotBox.Loading
+class DigitalBallotBox.LoginPage
+class DigitalBallotBox.ManageCandidate
+class DigitalBallotBox.ManageVoters
+class DigitalBallotBox.Results
+class DigitalBallotBox.ScheduleElection
+class DigitalBallotBox.VoterDashboard
+class com.toedter.calendar.JDateChooser
+class java.awt.Color
+class java.awt.Graphics
+class java.awt.Graphics2D
+class java.awt.HeadlessException
+class java.awt.Image
+class java.io.File
+class java.io.FileInputStream
+class java.io.InputStream
+class java.sql.Connection
+class java.sql.DriverManager
+class java.sql.PreparedStatement
+class java.sql.ResultSet
+class java.sql.SQLException
+class java.text.SimpleDateFormat
+class java.util.ArrayList
+class java.util.Calendar
+class java.util.Date
+class javax.swing.ImageIcon
+class javax.swing.JComponent
+class javax.swing.JFileChooser
+class javax.swing.JFrame
+class javax.swing.JOptionPane
+class javax.swing.filechooser.FileNameExtensionFilter
+class javax.swing.plaf.basic.BasicProgressBarUI
+class javax.swing.table.DefaultTableModel
+class net.proteanit.sql.DbUtils
+DigitalBallotBox.AdminDashboard ..> java.lang.SuppressWarnings
+DigitalBallotBox.AdminDashboard --|> javax.swing.JFrame
+DigitalBallotBox.Loading ..> java.lang.Override
+DigitalBallotBox.Loading ..> java.lang.SuppressWarnings
+DigitalBallotBox.Loading ..> java.awt.Color
+DigitalBallotBox.Loading ..> java.awt.Graphics
+DigitalBallotBox.Loading ..> java.awt.Graphics2D
+DigitalBallotBox.Loading ..> javax.swing.JComponent
+DigitalBallotBox.Loading --|> javax.swing.JFrame
+DigitalBallotBox.Loading ..> javax.swing.JOptionPane
+DigitalBallotBox.Loading ..> javax.swing.plaf.basic.BasicProgressBarUI
+DigitalBallotBox.LoginPage ..> java.lang.SuppressWarnings
+DigitalBallotBox.LoginPage ..> java.awt.HeadlessException
+DigitalBallotBox.LoginPage ..> java.sql.Connection
+DigitalBallotBox.LoginPage ..> java.sql.DriverManager
+DigitalBallotBox.LoginPage ..> java.sql.PreparedStatement
+DigitalBallotBox.LoginPage ..> java.sql.ResultSet
+DigitalBallotBox.LoginPage ..> java.sql.SQLException
+DigitalBallotBox.LoginPage ..> java.text.SimpleDateFormat
+DigitalBallotBox.LoginPage ..> java.util.Calendar
+DigitalBallotBox.LoginPage --|> javax.swing.JFrame
+DigitalBallotBox.LoginPage ..> javax.swing.JOptionPane
+DigitalBallotBox.ManageCandidate ..> java.lang.SuppressWarnings
+DigitalBallotBox.ManageCandidate ..> java.awt.Image
+DigitalBallotBox.ManageCandidate ..> java.io.File
+DigitalBallotBox.ManageCandidate ..> java.io.FileInputStream
+DigitalBallotBox.ManageCandidate ..> java.io.InputStream
+DigitalBallotBox.ManageCandidate ..> java.util.ArrayList
+DigitalBallotBox.ManageCandidate ..> java.util.Calendar
+DigitalBallotBox.ManageCandidate ..> javax.swing.ImageIcon
+DigitalBallotBox.ManageCandidate ..> javax.swing.JFileChooser
+DigitalBallotBox.ManageCandidate --|> javax.swing.JFrame
+DigitalBallotBox.ManageCandidate ..> javax.swing.JOptionPane
+DigitalBallotBox.ManageCandidate ..> javax.swing.filechooser.FileNameExtensionFilter
+DigitalBallotBox.ManageCandidate ..> javax.swing.table.DefaultTableModel
+DigitalBallotBox.ManageCandidate ..> net.proteanit.sql.DbUtils
+DigitalBallotBox.ManageVoters ..> java.lang.SuppressWarnings
+DigitalBallotBox.ManageVoters ..> java.util.ArrayList
+DigitalBallotBox.ManageVoters ..> java.util.Calendar
+DigitalBallotBox.ManageVoters --|> javax.swing.JFrame
+DigitalBallotBox.ManageVoters ..> javax.swing.JOptionPane
+DigitalBallotBox.ManageVoters ..> javax.swing.table.DefaultTableModel
+DigitalBallotBox.ManageVoters ..> net.proteanit.sql.DbUtils
+DigitalBallotBox.Results ..> java.lang.SuppressWarnings
+DigitalBallotBox.Results ..> java.awt.Image
+DigitalBallotBox.Results ..> java.text.SimpleDateFormat
+DigitalBallotBox.Results ..> java.util.ArrayList
+DigitalBallotBox.Results ..> java.util.Calendar
+DigitalBallotBox.Results ..> javax.swing.ImageIcon
+DigitalBallotBox.Results --|> javax.swing.JFrame
+DigitalBallotBox.Results ..> javax.swing.JOptionPane
+DigitalBallotBox.Results ..> javax.swing.table.DefaultTableModel
+DigitalBallotBox.Results ..> net.proteanit.sql.DbUtils
+DigitalBallotBox.ScheduleElection ..> java.lang.SuppressWarnings
+DigitalBallotBox.ScheduleElection ..> com.toedter.calendar.JDateChooser
+DigitalBallotBox.ScheduleElection ..> java.text.SimpleDateFormat
+DigitalBallotBox.ScheduleElection ..> java.util.Calendar
+DigitalBallotBox.ScheduleElection ..> java.util.Date
+DigitalBallotBox.ScheduleElection --|> javax.swing.JFrame
+DigitalBallotBox.ScheduleElection ..> javax.swing.JOptionPane
+DigitalBallotBox.ScheduleElection ..> javax.swing.table.DefaultTableModel
+DigitalBallotBox.ScheduleElection ..> net.proteanit.sql.DbUtils
+DigitalBallotBox.VoterDashboard ..> java.lang.SuppressWarnings
+DigitalBallotBox.VoterDashboard ..> java.awt.Image
+DigitalBallotBox.VoterDashboard ..> javax.swing.ImageIcon
+DigitalBallotBox.VoterDashboard --|> javax.swing.JFrame
+DigitalBallotBox.VoterDashboard ..> javax.swing.JOptionPane
+DigitalBallotBox.VoterDashboard ..> javax.swing.table.DefaultTableModel
+DigitalBallotBox.VoterDashboard ..> net.proteanit.sql.DbUtils
+@enduml

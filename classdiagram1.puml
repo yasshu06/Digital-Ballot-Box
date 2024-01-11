@@ -1,0 +1,45 @@
+@startuml
+class DigitalBallotBox.AdminDashboard
+class DigitalBallotBox.Loading
+class DigitalBallotBox.LoginPage
+class DigitalBallotBox.ManageCandidate
+class DigitalBallotBox.ManageVoters
+class DigitalBallotBox.Results
+class DigitalBallotBox.ScheduleElection
+class DigitalBallotBox.VoterDashboard
+class com.toedter.calendar.JDateChooser
+class java.awt.Color
+class java.awt.Graphics
+class java.awt.Graphics2D
+class java.awt.HeadlessException
+class java.awt.Image
+class java.io.File
+class java.io.FileInputStream
+class java.io.InputStream
+class java.sql.Connection
+class java.sql.DriverManager
+class java.sql.PreparedStatement
+class java.sql.ResultSet
+class java.sql.SQLException
+class java.text.SimpleDateFormat
+class java.util.ArrayList
+class java.util.Calendar
+class java.util.Date
+class javax.swing.ImageIcon
+class javax.swing.JComponent
+class javax.swing.JFileChooser
+class javax.swing.JFrame
+class javax.swing.JOptionPane
+class javax.swing.filechooser.FileNameExtensionFilter
+class javax.swing.plaf.basic.BasicProgressBarUI
+class javax.swing.table.DefaultTableModel
+class net.proteanit.sql.DbUtils
+DigitalBallotBox.AdminDashboard --|> javax.swing.JFrame
+DigitalBallotBox.Loading --|> javax.swing.JFrame
+DigitalBallotBox.LoginPage --|> javax.swing.JFrame
+DigitalBallotBox.ManageCandidate --|> javax.swing.JFrame
+DigitalBallotBox.ManageVoters --|> javax.swing.JFrame
+DigitalBallotBox.Results --|> javax.swing.JFrame
+DigitalBallotBox.ScheduleElection --|> javax.swing.JFrame
+DigitalBallotBox.VoterDashboard --|> javax.swing.JFrame
+@enduml
