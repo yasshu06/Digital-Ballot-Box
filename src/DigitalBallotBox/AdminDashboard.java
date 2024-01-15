@@ -7,6 +7,7 @@ public class AdminDashboard extends javax.swing.JFrame {
     }
 
     @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
@@ -120,7 +121,7 @@ public class AdminDashboard extends javax.swing.JFrame {
         layout.setVerticalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
         pack();
         setLocationRelativeTo(null);
-    }
+    }// </editor-fold>//GEN-END:initComponents
 
     private void LogOutButtonMouseClicked(java.awt.event.MouseEvent evt) {
         LoginPage lp = new LoginPage();
@@ -180,6 +181,8 @@ public class AdminDashboard extends javax.swing.JFrame {
             }
         });
     }
+    
+// Variables declaration - do not modify//GEN-BEGIN:variables
 
     private javax.swing.JButton CandidateButton;
 
@@ -211,5 +214,6 @@ public class AdminDashboard extends javax.swing.JFrame {
 
     private javax.swing.JPanel jPanel2;
 
-    
+    // End of variables declaration//GEN-END:variables
+
 }

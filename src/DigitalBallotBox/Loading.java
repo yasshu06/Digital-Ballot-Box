@@ -14,6 +14,7 @@ public class Loading extends javax.swing.JFrame {
     }
 
     @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
         jPanel1 = new javax.swing.JPanel();
         jProgressBar1 = new javax.swing.JProgressBar();
@@ -65,7 +66,7 @@ public class Loading extends javax.swing.JFrame {
         layout.setVerticalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
         pack();
         setLocationRelativeTo(null);
-    }
+    }// </editor-fold>//GEN-END:initComponents
 
     public static void main(String args[]) {
         try {
@@ -109,7 +110,7 @@ public class Loading extends javax.swing.JFrame {
         l.dispose();
         new LoginPage().setVisible(true);
     }
-
+// Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
 
     private javax.swing.JLabel jLabel2;
@@ -127,5 +128,7 @@ public class Loading extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
 
     private javax.swing.JProgressBar jProgressBar1;
+    // End of variables declaration//GEN-END:variables
+
 
 }

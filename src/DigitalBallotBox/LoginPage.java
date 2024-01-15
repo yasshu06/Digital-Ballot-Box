@@ -17,6 +17,7 @@ public class LoginPage extends javax.swing.JFrame {
     }
 
     @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
         buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel3 = new javax.swing.JPanel();
@@ -139,7 +140,7 @@ public class LoginPage extends javax.swing.JFrame {
         layout.setVerticalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
         pack();
         setLocationRelativeTo(null);
-    }
+    }// </editor-fold>//GEN-END:initComponents
 
     private void LoginButtonActionPerformed(java.awt.event.ActionEvent evt) {
         if (buttonGroup1.getSelection() == null) {
@@ -237,7 +238,7 @@ public class LoginPage extends javax.swing.JFrame {
             }
         });
     }
-
+// Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton AdminRadioButton;
 
     private javax.swing.JButton LoginButton;
@@ -282,5 +283,6 @@ public class LoginPage extends javax.swing.JFrame {
 
     private javax.swing.JPanel jPanel3;
 
-   
+   // End of variables declaration//GEN-END:variables
+
 }

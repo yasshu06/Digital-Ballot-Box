@@ -19,6 +19,7 @@ public class ScheduleElection extends javax.swing.JFrame {
     }
 
     @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
         jPanel3 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
@@ -159,7 +160,7 @@ public class ScheduleElection extends javax.swing.JFrame {
         layout.setVerticalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
         pack();
         setLocationRelativeTo(null);
-    }
+    }// </editor-fold>//GEN-END:initComponents
 
     private void EmptyInput() {
         ElectionTitle.setText("");
@@ -326,7 +327,7 @@ public class ScheduleElection extends javax.swing.JFrame {
             }
         });
     }
-
+// Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BackButton;
 
     private javax.swing.JButton CloseButton;
@@ -365,5 +366,6 @@ public class ScheduleElection extends javax.swing.JFrame {
 
     private javax.swing.JScrollPane jScrollPane1;
 
-  
+  // End of variables declaration//GEN-END:variables
+
 }

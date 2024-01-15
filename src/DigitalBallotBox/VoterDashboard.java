@@ -24,6 +24,7 @@ public class VoterDashboard extends javax.swing.JFrame {
     }
 
     @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
@@ -168,7 +169,7 @@ public class VoterDashboard extends javax.swing.JFrame {
         layout.setVerticalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE));
         pack();
         setLocationRelativeTo(null);
-    }
+    }// </editor-fold>//GEN-END:initComponents
 
     private void DisplayCandidate() {
         try {
@@ -306,7 +307,7 @@ public class VoterDashboard extends javax.swing.JFrame {
             }
         });
     }
-
+// Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField AgeBox;
 
     private javax.swing.JButton BackButton;
@@ -352,6 +353,7 @@ public class VoterDashboard extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
 
     private javax.swing.JScrollPane jScrollPane1;
+// End of variables declaration//GEN-END:variables
 
     
 }
