@@ -174,7 +174,7 @@ public class VoterDashboard extends javax.swing.JFrame {
     private void DisplayCandidate() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://evs.ck0eaa1knnbn.eu-north-1.rds.amazonaws.com:3306/evs?useSSL=false&allowPublicKeyRetrieval=true", "root", "Yash1234");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/evs?useSSL=false&allowPublicKeyRetrieval=true", "root", "Yash1234");
             PreparedStatement p = con.prepareStatement("Select Cid,CName,CGender,CAge from Candidate where CElect=?");
             p.setString(1, ElectionName);
             ResultSet rs = p.executeQuery();
@@ -210,12 +210,13 @@ public class VoterDashboard extends javax.swing.JFrame {
         return image;
     }
 
-    int VCount = 0;
+    
 
-    private void VoteCount() {
+  /*  private int VoteCount() {
+        int VCount=0;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://evs.ck0eaa1knnbn.eu-north-1.rds.amazonaws.com:3306/evs?useSSL=false&allowPublicKeyRetrieval=true", "root", "Yash1234");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/evs?useSSL=false&allowPublicKeyRetrieval=true", "root", "Yash1234");
             PreparedStatement p = con.prepareStatement("Select Max(VoteCount) from Candidate where CElect=?;");
             p.setString(1, ElectionName);
             ResultSet rs = p.executeQuery();
@@ -224,7 +225,8 @@ public class VoterDashboard extends javax.swing.JFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, e);
         }
-    }
+        return VCount;
+    } */
 
     int Key = -1;
 
@@ -234,7 +236,7 @@ public class VoterDashboard extends javax.swing.JFrame {
         Key = Integer.valueOf(model.getValueAt(MyIndex, 0).toString());
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://evs.ck0eaa1knnbn.eu-north-1.rds.amazonaws.com:3306/evs?useSSL=false&allowPublicKeyRetrieval=true", "root", "Yash1234");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/evs?useSSL=false&allowPublicKeyRetrieval=true", "root", "Yash1234");
             PreparedStatement p = con.prepareStatement("Select * from Candidate where Cid=? and CElect=?");
             p.setInt(1, Key);
             p.setString(2, ElectionName);
@@ -253,30 +255,36 @@ public class VoterDashboard extends javax.swing.JFrame {
     }
 
     private void VoteButtonActionPerformed(java.awt.event.ActionEvent evt) {
-        if (Key == -1) {
-            JOptionPane.showMessageDialog(this, "Please Select You Favorite Candidate");
-        } else {
-            try {
-                Class.forName("com.mysql.jdbc.Driver");
-                Connection con = DriverManager.getConnection("jdbc:mysql://evs.ck0eaa1knnbn.eu-north-1.rds.amazonaws.com:3306/evs?useSSL=false&allowPublicKeyRetrieval=true", "root", "Yash1234");
-                PreparedStatement p = con.prepareStatement("Update Candidate set VoteCount=? where Cid=? and CElect=?");
-                VoteCount();
-                p.setInt(1, VCount);
-                p.setInt(2, Key);
-                p.setString(3, ElectionName);
-                p.executeUpdate();
-                PreparedStatement p1 = con.prepareStatement("Update Voters set Vote=? where VUsername=?");
-                p1.setString(1, "true");
-                p1.setString(2, VUser);
+    if (Key == -1) {
+        JOptionPane.showMessageDialog(this, "Please Select Your Favorite Candidate");
+    } else {
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/evs?useSSL=false&allowPublicKeyRetrieval=true", "root", "Yash1234");
+            PreparedStatement p = con.prepareStatement("UPDATE Candidate SET VoteCount = VoteCount + 1 WHERE Cid = ? AND CElect = ?");
+            
+            p.setInt(1, Key);
+            p.setString(2, ElectionName);
+            int rowsAffected = p.executeUpdate();
+            
+            if (rowsAffected > 0) {
+                // Update the voter's vote status
+                PreparedStatement p1 = con.prepareStatement("UPDATE Voters SET Vote = 'true' WHERE VUsername = ?");
+                p1.setString(1, VUser);
                 p1.executeUpdate();
-                JOptionPane.showMessageDialog(this, "You have Successfully Voted to Your Favorite contestant");
+                
+                JOptionPane.showMessageDialog(this, "You have Successfully Voted for Your Favorite Contestant");
                 VoteButton.setVisible(false);
                 jLabel10.setVisible(true);
-            } catch (Exception e) {
-                JOptionPane.showMessageDialog(this, e);
+            } else {
+                JOptionPane.showMessageDialog(this, "Failed to update vote count.");
             }
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e);
         }
     }
+}
 
     private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {
         new LoginPage().setVisible(true);

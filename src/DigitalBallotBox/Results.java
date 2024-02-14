@@ -21,7 +21,7 @@ public class Results extends javax.swing.JFrame {
         ElectionList.addItem("Select");
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://evs.ck0eaa1knnbn.eu-north-1.rds.amazonaws.com:3306/evs?useSSL=false&allowPublicKeyRetrieval=true", "root", "Yash1234");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/evs?useSSL=false&allowPublicKeyRetrieval=true", "root", "Yash1234");
             PreparedStatement p = con.prepareStatement("Select etitle from election");
             ResultSet rs = p.executeQuery();
             ArrayList<String> data = new ArrayList<String>();
@@ -193,7 +193,7 @@ public class Results extends javax.swing.JFrame {
     private void ShowResultsActionPerformed(java.awt.event.ActionEvent evt) {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://evs.ck0eaa1knnbn.eu-north-1.rds.amazonaws.com:3306/evs?useSSL=false&allowPublicKeyRetrieval=true", "root", "Yash1234");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/evs?useSSL=false&allowPublicKeyRetrieval=true", "root", "Yash1234");
             PreparedStatement p2 = con.prepareStatement("Select edate from election where etitle=?");
             p2.setString(1, ElectionList.getSelectedItem().toString());
             ResultSet r = p2.executeQuery();
@@ -244,7 +244,7 @@ public class Results extends javax.swing.JFrame {
         Key = Integer.valueOf(model.getValueAt(MyIndex, 0).toString());
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://evs.ck0eaa1knnbn.eu-north-1.rds.amazonaws.com:3306/evs?useSSL=false&allowPublicKeyRetrieval=true", "root", "Yash1234");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/evs?useSSL=false&allowPublicKeyRetrieval=true", "root", "Yash1234");
             PreparedStatement p = con.prepareStatement("Select * from Candidate where Cid=? and CElect=?");
             p.setInt(1, Key);
             p.setString(2, ElectionList.getSelectedItem().toString());

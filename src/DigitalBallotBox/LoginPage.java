@@ -160,7 +160,7 @@ public class LoginPage extends javax.swing.JFrame {
             String pass = PasswordField.getText();
             try {
                 Class.forName("com.mysql.jdbc.Driver");
-                Connection con = DriverManager.getConnection("jdbc:mysql://evs.ck0eaa1knnbn.eu-north-1.rds.amazonaws.com:3306/evs?useSSL=false&allowPublicKeyRetrieval=true", "root", "Yash1234");
+                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/evs?useSSL=false&allowPublicKeyRetrieval=true", "root", "Yash1234");
                 PreparedStatement p = con.prepareStatement("Select * from Voters Where VUsername=? and VPassword=?;");
                 p.setString(1, user);
                 p.setString(2, pass);

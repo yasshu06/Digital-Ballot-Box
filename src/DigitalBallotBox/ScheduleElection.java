@@ -170,7 +170,7 @@ public class ScheduleElection extends javax.swing.JFrame {
     private void DisplayElections() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://evs.ck0eaa1knnbn.eu-north-1.rds.amazonaws.com:3306/evs?useSSL=false&allowPublicKeyRetrieval=true", "root", "Yash1234");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/evs?useSSL=false&allowPublicKeyRetrieval=true", "root", "Yash1234");
             Statement st = con.createStatement();
             String query = "Select * from election;";
             ResultSet rs = st.executeQuery(query);
@@ -192,7 +192,7 @@ public class ScheduleElection extends javax.swing.JFrame {
             String edate = sdf.format(ElectionDate.getDate());
             try {
                 Class.forName("com.mysql.jdbc.Driver");
-                Connection con = DriverManager.getConnection("jdbc:mysql://evs.ck0eaa1knnbn.eu-north-1.rds.amazonaws.com:3306/evs?useSSL=false&allowPublicKeyRetrieval=true", "root", "Yash1234");
+                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/evs?useSSL=false&allowPublicKeyRetrieval=true", "root", "Yash1234");
                 PreparedStatement p = con.prepareStatement("Update election set etitle=? , edate=? where eid=?");
                 p.setString(1, etitle);
                 p.setString(2, edate);
@@ -227,7 +227,7 @@ public class ScheduleElection extends javax.swing.JFrame {
             String edate = sdf.format(ElectionDate.getDate());
             try {
                 Class.forName("com.mysql.jdbc.Driver");
-                Connection con = DriverManager.getConnection("jdbc:mysql://evs.ck0eaa1knnbn.eu-north-1.rds.amazonaws.com:3306/evs?useSSL=false&allowPublicKeyRetrieval=true", "root", "Yash1234");
+                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/evs?useSSL=false&allowPublicKeyRetrieval=true", "root", "Yash1234");
                 ElectCount();
                 PreparedStatement p = con.prepareStatement("Insert Into election values(?,?,?);");
                 p.setInt(1, Eid);
@@ -248,7 +248,7 @@ public class ScheduleElection extends javax.swing.JFrame {
     private void ElectCount() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://evs.ck0eaa1knnbn.eu-north-1.rds.amazonaws.com:3306/evs?useSSL=false&allowPublicKeyRetrieval=true", "root", "Yash1234");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/evs?useSSL=false&allowPublicKeyRetrieval=true", "root", "Yash1234");
             PreparedStatement p = con.prepareStatement("Select Max(eid) from election;");
             ResultSet rs = p.executeQuery();
             rs.next();
@@ -286,7 +286,7 @@ public class ScheduleElection extends javax.swing.JFrame {
         } else {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
-                Connection con = DriverManager.getConnection("jdbc:mysql://evs.ck0eaa1knnbn.eu-north-1.rds.amazonaws.com:3306/evs?useSSL=false&allowPublicKeyRetrieval=true", "root", "Yash1234");
+                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/evs?useSSL=false&allowPublicKeyRetrieval=true", "root", "Yash1234");
                 PreparedStatement p = con.prepareStatement("Delete from election where eid=?");
                 p.setInt(1, key);
                 try {

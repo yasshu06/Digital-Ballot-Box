@@ -205,7 +205,7 @@ public class ManageVoters extends javax.swing.JFrame {
         ElectionList1.addItem("Select");
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://evs.ck0eaa1knnbn.eu-north-1.rds.amazonaws.com:3306/evs?useSSL=false&allowPublicKeyRetrieval=true", "root", "Yash1234");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/evs?useSSL=false&allowPublicKeyRetrieval=true", "root", "Yash1234");
             PreparedStatement p = con.prepareStatement("Select etitle from election;");
             ResultSet rs = p.executeQuery();
             ArrayList<String> data = new ArrayList<String>();
@@ -228,7 +228,7 @@ public class ManageVoters extends javax.swing.JFrame {
     private void DisplayVoterTable() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://evs.ck0eaa1knnbn.eu-north-1.rds.amazonaws.com:3306/evs?useSSL=false&allowPublicKeyRetrieval=true", "root", "Yash1234");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/evs?useSSL=false&allowPublicKeyRetrieval=true", "root", "Yash1234");
             PreparedStatement p = con.prepareStatement("Select Vid,VName,VGender,VAge,VUsername from Voters where VElect=?");
             p.setString(1, ElectionList1.getSelectedItem().toString());
             ResultSet rs = p.executeQuery();
@@ -256,7 +256,7 @@ public class ManageVoters extends javax.swing.JFrame {
         Key = Integer.valueOf(model.getValueAt(MyIndex, 0).toString());
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://evs.ck0eaa1knnbn.eu-north-1.rds.amazonaws.com:3306/evs?useSSL=false&allowPublicKeyRetrieval=true", "root", "Yash1234");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/evs?useSSL=false&allowPublicKeyRetrieval=true", "root", "Yash1234");
             PreparedStatement p = con.prepareStatement("Select * from Voters where Vid=? and VElect=?");
             p.setInt(1, Key);
             p.setString(2, ElectionList.getSelectedItem().toString());
@@ -280,7 +280,7 @@ public class ManageVoters extends javax.swing.JFrame {
     private void ShowVotersActionPerformed(java.awt.event.ActionEvent evt) {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://evs.ck0eaa1knnbn.eu-north-1.rds.amazonaws.com:3306/evs?useSSL=false&allowPublicKeyRetrieval=true", "root", "Yash1234");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/evs?useSSL=false&allowPublicKeyRetrieval=true", "root", "Yash1234");
             PreparedStatement p = con.prepareStatement("Select Vid,VName,VGender,VAge,VUsername from Voters where VElect=?");
             p.setString(1, ElectionList.getSelectedItem().toString());
             ResultSet rs = p.executeQuery();
@@ -298,7 +298,7 @@ public class ManageVoters extends javax.swing.JFrame {
     private void VoterCount() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://evs.ck0eaa1knnbn.eu-north-1.rds.amazonaws.com:3306/evs?useSSL=false&allowPublicKeyRetrieval=true", "root", "Yash1234");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/evs?useSSL=false&allowPublicKeyRetrieval=true", "root", "Yash1234");
             PreparedStatement p = con.prepareStatement("Select Max(Vid) from Voters where VElect=?;");
             p.setString(1, (String) ElectionList1.getSelectedItem());
             ResultSet rs = p.executeQuery();
@@ -317,7 +317,7 @@ public class ManageVoters extends javax.swing.JFrame {
         } else {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
-                Connection con = DriverManager.getConnection("jdbc:mysql://evs.ck0eaa1knnbn.eu-north-1.rds.amazonaws.com:3306/evs?useSSL=false&allowPublicKeyRetrieval=true", "root", "Yash1234");
+                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/evs?useSSL=false&allowPublicKeyRetrieval=true", "root", "Yash1234");
                 PreparedStatement p2 = con.prepareStatement("Select edate from election where etitle=?");
                 p2.setString(1, ElectionList1.getSelectedItem().toString());
                 ResultSet r = p2.executeQuery();
@@ -355,7 +355,7 @@ public class ManageVoters extends javax.swing.JFrame {
         } else {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
-                Connection con = DriverManager.getConnection("jdbc:mysql://evs.ck0eaa1knnbn.eu-north-1.rds.amazonaws.com:3306/evs?useSSL=false&allowPublicKeyRetrieval=true", "root", "Yash1234");
+                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/evs?useSSL=false&allowPublicKeyRetrieval=true", "root", "Yash1234");
                 PreparedStatement p = con.prepareStatement("Update Voters set VName=?, VGender=?,VPassword=?,VAge=?,VUsername=? Where Vid=? and VElect=?;");
                 p.setString(1, NameTextField.getText());
                 p.setString(2, GenderList.getSelectedItem().toString());
@@ -380,7 +380,7 @@ public class ManageVoters extends javax.swing.JFrame {
         } else {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
-                Connection con = DriverManager.getConnection("jdbc:mysql://evs.ck0eaa1knnbn.eu-north-1.rds.amazonaws.com:3306/evs?useSSL=false&allowPublicKeyRetrieval=true", "root", "Yash1234");
+                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/evs?useSSL=false&allowPublicKeyRetrieval=true", "root", "Yash1234");
                 PreparedStatement p = con.prepareStatement("Delete from Voters Where Vid=? and VElect=?;");
                 p.setInt(1, Key);
                 p.setString(2, ElectionList1.getSelectedItem().toString());
@@ -406,7 +406,7 @@ public class ManageVoters extends javax.swing.JFrame {
         } else {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
-                Connection con = DriverManager.getConnection("jdbc:mysql://evs.ck0eaa1knnbn.eu-north-1.rds.amazonaws.com:3306/evs?useSSL=false&allowPublicKeyRetrieval=true", "root", "Yash1234");
+                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/evs?useSSL=false&allowPublicKeyRetrieval=true", "root", "Yash1234");
                 PreparedStatement p = con.prepareStatement("Select VPassword from Voters Where Vid=? and VElect=?;");
                 p.setInt(1, Key);
                 p.setString(2, ElectionList1.getSelectedItem().toString());
